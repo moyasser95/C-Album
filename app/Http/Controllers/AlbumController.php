@@ -99,6 +99,6 @@ class AlbumController extends Controller
         $img=Picture::where("album_id",$id)->pluck("Photos");
         Picture::deleteImage($img);
         Album::findOrFail($id)->delete();
-        return redirect()->route('albums.index')->with('ms_admin',"the album has been deleted successfully");
+        return redirect()->route('albums.index')->with('success',"the album has been deleted successfully");
     }
 }
